@@ -1,24 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
+import Header from "./components/Header";
+import Main from "./components/Main";
+import Offer1 from "./components/Offer1";
+import Offer2 from "./components/Offer2";
+import Offer3 from "./components/Offer3";
+import ErrorPage from "./components/ErrorPage";
 function App() {
+  // setting state variable globally
+  const [number, setNumber] = useState("");
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <Header />
+      <Routes>
+        <Route index element={<Main number={number} setNumber={setNumber} />} />
+        <Route path="/off1" element={<Offer1 number={number} />} />
+        <Route path="/cou2" element={<Offer2 number={number} />} />
+        <Route path="/dis3" element={<Offer3 number={number} />} />
+        <Route path="*" element={<ErrorPage />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
