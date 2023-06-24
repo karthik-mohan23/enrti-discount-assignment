@@ -6,7 +6,7 @@ const Offer2 = ({ number }) => {
       <h1>Congratulations!!</h1>
       <h3>You received 20% off</h3>
       <p>
-        Original Price : Rs.<del>1000/-</del>
+        Original Price : Rs.<del>{number}/-</del>
       </p>
       <h3>Deal of the day : Rs.{dealPrice}/-</h3>
       <div>
