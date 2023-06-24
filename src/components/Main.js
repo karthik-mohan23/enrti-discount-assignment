@@ -7,7 +7,12 @@ const Main = ({ number, setNumber }) => {
     if (isVisible) {
       return;
     }
-    return setNumber(event.target.value.replace(/\D/g, ""));
+    return setNumber(
+      event.target.value
+        .replace(/[^\d.]/g, "")
+        .replace(/^(\d*\.\d*)\..*$/, "$1")
+    );
+    // return setNumber(event.target.value.replace(/\D/g, ""));
   }
 
   // variable to check whether the user has clicked the button.
