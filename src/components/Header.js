@@ -1,9 +1,9 @@
 import { Link } from "react-router-dom";
 const Header = () => {
   return (
-    <header className="section">
-      <nav>
-        <Link to="/">
+    <header>
+      <nav className="section">
+        <Link to="/" className="home">
           <h2>Home</h2>
         </Link>
 
